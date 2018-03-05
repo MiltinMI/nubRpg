@@ -1,7 +1,11 @@
-
+import java.util.Scanner;
 public class MyApartment {
     
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        
+        
         spellStorage myAttackStorage = new spellStorage();
         Attack[] myAttacks = myAttackStorage.getSpells();
         
