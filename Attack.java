@@ -8,7 +8,7 @@ public class Attack {
     private int aim = 0; //TODO; actual datatype for aim (High, Mid, Low)
     private int itemReq = 0; //TODO; actual datatype for the weapon/item.
     private int fatigueGain = 5;
-    private int rawDamage = 0;
+    private double rawDamage = 0;
     //private startAnimSprite;
     public Attack(int id) {
         this.id = id;
@@ -25,7 +25,7 @@ public class Attack {
         this.name = name;
     }
 
-    public Attack(int id, String typeName, String name, int rawDamage) {
+    public Attack(int id, String typeName, String name, double rawDamage) {
         this.id = id;
         this.typeName = typeName;
         this.name = name;
@@ -44,14 +44,14 @@ public class Attack {
         this.frames = amount;
     }
 
-    public int getDmg() {
+    public double getDmg() {
         return this.rawDamage;
     }
 }
 
 class PhysicalAttack extends Attack {
     //private Effect effect; TODO; actual datatype for effect such as 10% of poison.
-    public PhysicalAttack(int id, String name, int rawDamage) {
+    public PhysicalAttack(int id, String name, double rawDamage) {
         super(id, "physical", name, rawDamage);
     }
 }
@@ -59,7 +59,7 @@ class PhysicalAttack extends Attack {
 class MagicalAttack extends Attack {
     private int manaReq = 3;
     //private Effect effect; TODO; actual datatype for effect such as 10% of poison.
-    public MagicalAttack(int id, String name, int rawDamage) {
+    public MagicalAttack(int id, String name, double rawDamage) {
         super(id, "magical", name, rawDamage);
     }
 

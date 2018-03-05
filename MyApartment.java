@@ -32,7 +32,12 @@ public class MyApartment {
             System.out.println("The Wizard says a couple of words, \nyou now know the following spells:\n");
             
             for(int i = 0; i < playerAttacks.length; i++) {
-                System.out.println(playerAttacks[i].getName() + ", DMG: " + playerAttacks[i].getDmg());
+                if(playerAttacks[i] instanceof PhysicalAttack) {
+                    System.out.println(playerAttacks[i].getName() + ", ATK: " + playerAttacks[i].getDmg() + ", DMG: " + player.getAttackDmg((PhysicalAttack)playerAttacks[i]));
+                }
+                else if(playerAttacks[i] instanceof MagicalAttack) {
+                    System.out.println(playerAttacks[i].getName() + ", ATK: " + playerAttacks[i].getDmg() + ", DMG: " + player.getAttackDmg((MagicalAttack)playerAttacks[i]));
+                } 
             }
         
             System.out.println("\nPointer has reached end of file, \nand you realize that your life is vaguely pointless. You character commits suicide.");
