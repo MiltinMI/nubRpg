@@ -63,4 +63,54 @@ public class Entity {
     public int getAttackDmg(MagicalAttack atk) {
         return (int)(this.getSdps() * atk.getDmg());
     }
+
+    //Setters Below
+
+    public void setStr(int setVal) {
+        this.str = setVal;
+    }
+
+    public void setAgi(int setVal) {
+        this.agi = setVal;
+    }
+
+    public void setIni(int setVal) {
+        this.ini = setVal;
+    }
+    
+    public void setWis(int setVal) {
+        this.wis = setVal;
+    }
+    
+    public void setSpi(int setVal) {
+        this.spi = setVal;
+    }
+    
+    public void setSta(int setVal) {
+        this.sta = setVal;
+    }
+
+    //Only to be used on initial character creation. Code will look to messy if used frequently.
+    public void setStats(int str, int agi, int ini, int wis, int spi, int sta) {
+        this.str = str;
+        this.agi = agi;
+        this.ini = ini;
+        this.wis = wis;
+        this.spi = spi;
+        this.sta = sta;
+    }
+    //Easier to use if setting base values.
+    public void setStats(int[] statArr) {
+        this.str = statArr[0];
+        this.agi = statArr[1];
+        this.ini = statArr[2];
+        this.wis = statArr[3];
+        this.spi = statArr[4];
+        this.sta = statArr[5];
+    }
+  
+
+    
+   
+    
 }

@@ -17,6 +17,20 @@ public class PlayerClass {
         this.baseSta = sta;
         this.wepBonus = wepBon;
     }
+
+    public int[] getBaseStats() {
+        int[] tmp = new int[6];
+        
+        tmp[0] = this.baseStr;
+        tmp[1] = this.baseAgi;
+        tmp[2] = this.baseIni;
+        tmp[3] = this.baseWis;
+        tmp[4] = this.baseSpi;
+        tmp[5] = this.baseSta;
+
+        return tmp;
+    }
+    
 }
 
 class GateKeeper extends PlayerClass {

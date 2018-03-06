@@ -3,7 +3,7 @@ public class MyApartment {
     
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-
+        QualityChecker the = new QualityChecker();
         
         
         spellStorage myAttackStorage = new spellStorage();
@@ -19,7 +19,29 @@ public class MyApartment {
     
         characters[0] = they;
         characters[1] = sensei;
+        
+        checkup(me, in, the);
         run(me, characters);
+        
+    }
+
+    static void checkup(Entity player, Scanner in, QualityChecker the) {
+        System.out.println("Hello Player, I want you to look deep into your heart and identify a quality about yourself. \nYour Quality is: ");
+        String qual = in.nextLine();
+        int classId = 0;
+        while(true) {
+            classId = the.getClassFromQuality(qual);
+            if(classId != 0) {
+                break;
+            }
+            else {
+                System.out.println("You call that a quality?\nTry again stupid: ");
+                qual = in.nextLine();
+            }
+        }
+
+        System.out.println("Haha! We analysed your quality and got: " + classId);
+        in.nextLine();
         
     }
     
