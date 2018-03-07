@@ -2,6 +2,8 @@ import java.util.Scanner;
 public class MyApartment {
     
     public static void main(String[] args) {
+
+        //test
         Scanner in = new Scanner(System.in);
         QualityChecker the = new QualityChecker();
         

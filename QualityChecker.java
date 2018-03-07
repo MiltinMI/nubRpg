@@ -64,7 +64,7 @@ public class QualityChecker {
     return false;
 }
     private String[] getGateQ() {
-        return new String[] {"stud", "honorable", "entitled", "reliable", "narcisistic", "heavy", "strong", "tanky", "ripped"};
+        return new String[] {"sturdy", "honorable", "entitled", "reliable", "narcisistic", "heavy", "strong", "tanky", "ripped"};
     }
 
     private String[] getPriQ() {
@@ -72,7 +72,7 @@ public class QualityChecker {
     }
     
     private String[] getPeasQ() {
-        return new String[] {"hard working", "working", "tough", "simple", "traditional", "straight"};
+        return new String[] {"hard working", "working", "tough", "simple", "traditional", "straight", "filthy"};
     }
     
     private String[] getExplQ() {
