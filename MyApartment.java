@@ -20,12 +20,22 @@ public class MyApartment {
         characters[0] = they;
         characters[1] = sensei;
         
-        checkup(me, in, the);
+        int classId = checkup(me, in, the);
+
+        me.setPlayerClass(assignClass(classId, the));
+        me.setStats(me.getPlayerClass().getBaseStats());
+        
         run(me, characters);
+        
         
     }
 
-    static void checkup(Entity player, Scanner in, QualityChecker the) {
+    static PlayerClass assignClass(int id, QualityChecker the) {
+        return the.makeClassFromId(id);
+        
+    }
+
+    static int checkup(Entity player, Scanner in, QualityChecker the) {
         System.out.println("Hello Player, I want you to look deep into your heart and identify a quality about yourself. \nYour Quality is: ");
         String qual = in.nextLine();
         int classId = 0;
@@ -38,11 +48,12 @@ public class MyApartment {
                 System.out.println("You call that a quality?\nTry again stupid: ");
                 qual = in.nextLine();
             }
+            
         }
 
-        System.out.println("Haha! We analysed your quality and got: " + classId);
+        System.out.println("Haha! We analysed your quality and got: " + the.getClassNameFromId(classId));
         in.nextLine();
-        
+        return classId;
     }
     
     static void run(Entity player, Entity[] characters) {
@@ -54,6 +65,8 @@ public class MyApartment {
             for(int i = 0; i < 2; i++) {
                 System.out.println(characters[i].getName());
             }
+
+            System.out.println("Fetched str: "+ player.getStr());
             
             System.out.println("The Wizard says a couple of words, \nyou now know the following spells:\n");
             

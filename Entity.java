@@ -1,5 +1,6 @@
 public class Entity {
     private String  name = "Nameless";
+    private PlayerClass clas = setGenericClass();
     private Attack[] attacks;
     private int hp = 20;
     private int mp = 5;
@@ -12,8 +13,9 @@ public class Entity {
     private int end = 0;
     private int lvl = 1;
     
-    public Entity(String name, int str, int agi, int wis, int ini, int spi, int sta, int lvl) {
+    public Entity(String name, PlayerClass clas, int str, int agi, int wis, int ini, int spi, int sta, int lvl) {
         this.name = name;
+        this.clas = clas;
         this.str = str;
         this.agi = agi;
         this.wis = wis;
@@ -34,6 +36,10 @@ public class Entity {
     
     public int getMp(int wis, int lvl) {
         return (int)(wis * lvl * lvl * 4.7);
+    }
+
+    public int getStr() {
+        return this.str;
     }
 
     public double getDps() {
@@ -109,8 +115,16 @@ public class Entity {
         this.sta = statArr[5];
     }
   
+    private PlayerClass setGenericClass() {
+        return new PlayerClass("Commoner", 0, 1, 1, 1, 1, 1, 1, new String[] {"fist"});
+    }
 
+    public void setPlayerClass(PlayerClass pClass) {
+        this.clas = pClass;
+    }
     
-   
+    public PlayerClass getPlayerClass() {
+        return this.clas;
+    }
     
 }

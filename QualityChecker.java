@@ -10,7 +10,7 @@ public class QualityChecker {
     String[] brig = getBrigQ();
     String[] exo = getExoQ();
     String[] sootSay = getSootQ();
-
+    private String[] pClasses = new String[] {"Gate Keeper", "Prison Guard", "Peasant", "Explorer", "Magician", "Wizard", "HighwayMan", "Brigand", "Exorcist", "Soothsayer"};
     public QualityChecker(){
 
     }
@@ -80,27 +80,57 @@ public class QualityChecker {
     }
     
     private String[] getMagiQ() {
-        return new String[] {"eh"};
+        return new String[] {"showoff", "magical", "social", "entertaining"};
     }
     
     private String[] getWizQ() {
-        return new String[] {"eh"};
+        return new String[] {"hacker", "autistic", "smart", "genious", "focused", "intelligent"};
     }
     
     private String[] getHighQ() {
-        return new String[] {"eh"};
+        return new String[] {"charming", "spontane", "special", "hacky", "carefree"};
     }
     
     private String[] getBrigQ() {
-        return new String[] {"eh"};
+        return new String[] {"stabby", "gambly", "easy", "serious", "murderous", "sneaky"};
     }
     
     private String[] getExoQ() {
-        return new String[] {"eh"};
+        return new String[] {"edgy", "holy", "believing", "by the book", "convincing"};
     }
     
     private String[] getSootQ() {
-        return new String[] {"eh"};
+        return new String[] {"empathetic", "sympathetic", "caring"};
+    }
+
+    public String getClassNameFromId(int id){
+        return this.pClasses[id-1];
+    }
+
+    public PlayerClass makeClassFromId(int id) {
+        switch(id) {
+        case 1: return new GateKeeper();
+            
+        case 2: return new PrisonGuard();
+           
+        case 3: return new Peasant();
+           
+        case 4: return new Explorer();
+
+        case 5: return new Magician();
+        
+        case 6: return new Wizard();
+        
+        case 7: return new HighwayMan();
+        
+        case 8: return new Brigand();
+        
+        case 9: return new Exorcist();
+        
+        case 10: return new Soothsayer();
+        
+        default: return new Commoner();
+                }
     }
     
 }
